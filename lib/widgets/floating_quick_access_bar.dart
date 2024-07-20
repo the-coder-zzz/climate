@@ -25,12 +25,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
     'Energy Efficiency',
     'Reforestation'
   ];
-  List<IconData> icons = [
-    Icons.location_on,
-    Icons.date_range,
-    Icons.people,
-    Icons.wb_sunny
-  ];
+  List<IconData> icons = [Icons.bolt, Icons.eco, Icons.lightbulb, Icons.park];
 
   List<Widget> generateRowElements() {
     rowElements.clear();

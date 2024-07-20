@@ -54,8 +54,8 @@ class _ElectricVehiclesDetailPageState
                 child: CarouselSlider(
                   items: generateImageTiles(),
                   options: CarouselOptions(
-                    // height: 200,
-                    aspectRatio: 16 / 4, // Adjust the aspect ratio as needed
+                    height: 300,
+                    // aspectRatio: 16 / 4, // Adjust the aspect ratio as needed
                     viewportFraction: 0.5,
                     enlargeCenterPage: true,
                     autoPlay: true,
