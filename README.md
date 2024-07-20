@@ -17,11 +17,11 @@ Flutter - Make sure you have Flutter installed on your machine.
 ### Installation
 
 1. Clone the repository:
-  - git clone https://github.com/your-username/climate-solutionize.git
-  - cd climate-solutionize
+    - git clone https://github.com/your-username/climate-solutionize.git
+    - cd climate-solutionize
     
 2. Install the dependencies:
-  - flutter pub get
+    - flutter pub get
     
 3. Run the application:
    - flutter run
