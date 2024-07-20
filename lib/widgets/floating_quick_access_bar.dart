@@ -92,6 +92,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                         padding: EdgeInsets.only(
                             bottom: widget.screenSize.height / 30),
                         child: Card(
+                            color: Colors.white,
                             elevation: 4,
                             child: Padding(
                                 padding: EdgeInsets.only(

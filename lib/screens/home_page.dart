@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   children: [
                     SizedBox(
-                      height: 100,
+                      height: 120,
                     ),
                     FloatingQuickAccessBar(
                       screenSize: screenSize,

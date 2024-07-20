@@ -52,8 +52,9 @@ class _WindEnergyDetailPageState extends State<WindEnergyDetailPage> {
                 child: CarouselSlider(
                   items: generateImageTiles(),
                   options: CarouselOptions(
-                    height: 200,
-                    viewportFraction: 0.9,
+                    // height: 300,
+                    aspectRatio: 16 / 4, // Adjust the aspect ratio as needed
+                    viewportFraction: 0.5,
                     enlargeCenterPage: true,
                     autoPlay: true,
                     onPageChanged: (index, reason) {
