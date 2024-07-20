@@ -14,9 +14,9 @@ class _ElectricVehiclesDetailPageState
   int _current = 0;
 
   final List<String> images = [
-    'assets/images/energy_electric_vehicle1.jpg',
-    'assets/images/energy_electric_vehicle2.jpg',
-    'assets/images/energy_electric_vehicle3.jpg',
+    'images/energy_electric_vehicle1.jpg',
+    'images/energy_electric_vehicle2.jpg',
+    'images/energy_electric_vehicle3.jpg',
   ];
 
   List<Widget> generateImageTiles() {

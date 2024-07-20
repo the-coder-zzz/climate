@@ -24,9 +24,7 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey _contactSectionKey = GlobalKey();
 
   _scrollListener() {
-    setState(() {
-      // Just update the scroll position if needed
-    });
+    setState(() {});
   }
 
   void _scrollToSection(GlobalKey key) {
@@ -69,7 +67,7 @@ class _HomePageState extends State<HomePage> {
           ? AppBar(
               elevation: 0,
               backgroundColor: Colors.white,
-              title: Text(
+              title: const Text(
                 'Climate Solutionize',
                 style: TextStyle(
                   color: Color(0xFF077bd7),

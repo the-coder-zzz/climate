@@ -12,9 +12,9 @@ class _TreePlantingDetailPageState extends State<TreePlantingDetailPage> {
   int _current = 0;
 
   final List<String> images = [
-    'assets/images/reforestation_tree_planting1.jpg',
-    'assets/images/reforestation_tree_planting2.jpg',
-    'assets/images/reforestation_tree_planting3.jpg',
+    'images/reforestation_tree_planting1.jpg',
+    'images/reforestation_tree_planting2.jpg',
+    'images/reforestation_tree_planting3.jpg',
   ];
 
   List<Widget> generateImageTiles() {

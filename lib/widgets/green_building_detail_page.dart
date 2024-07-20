@@ -13,9 +13,9 @@ class _GreenBuildingDetailPageState extends State<GreenBuildingDetailPage> {
   int _current = 0;
 
   final List<String> images = [
-    'assets/images/sustainable_green_building1.jpg',
-    'assets/images/sustainable_green_building2.jpg',
-    'assets/images/sustainable_green_building3.jpg',
+    'images/sustainable_green_building1.jpg',
+    'images/sustainable_green_building2.jpg',
+    'images/sustainable_green_building3.jpg',
   ];
 
   List<Widget> generateImageTiles() {

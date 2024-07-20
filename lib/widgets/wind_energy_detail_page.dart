@@ -12,9 +12,9 @@ class _WindEnergyDetailPageState extends State<WindEnergyDetailPage> {
   int _current = 0;
 
   final List<String> images = [
-    'assets/images/wind_energy_windmill1.jpg',
-    'assets/images/wind_energy_windmill2.jpg',
-    'assets/images/wind_energy_windmill3.jpg',
+    'images/wind_energy_windmill1.jpg',
+    'images/wind_energy_windmill2.jpg',
+    'images/wind_energy_windmill3.jpg',
   ];
 
   List<Widget> generateImageTiles() {

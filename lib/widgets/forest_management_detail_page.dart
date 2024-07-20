@@ -14,9 +14,9 @@ class _ForestManagementDetailPageState
   int _current = 0;
 
   final List<String> images = [
-    'assets/images/reforestation_forest_management1.jpg',
-    'assets/images/reforestation_forest_management3.jpg',
-    'assets/images/reforestation_forest_management2.jpg',
+    'images/reforestation_forest_management1.jpg',
+    'images/reforestation_forest_management3.jpg',
+    'images/reforestation_forest_management2.jpg',
   ];
 
   List<Widget> generateImageTiles() {

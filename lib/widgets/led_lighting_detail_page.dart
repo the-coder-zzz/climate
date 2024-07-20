@@ -12,9 +12,9 @@ class _LEDLightingDetailPageState extends State<LEDLightingDetailPage> {
   int _current = 0;
 
   final List<String> images = [
-    'assets/images/energy_led_light1.jpg',
-    'assets/images/energy_led_light2.jpg',
-    'assets/images/energy_led_light3.jpg',
+    'images/energy_led_light1.jpg',
+    'images/energy_led_light2.jpg',
+    'images/energy_led_light3.jpg',
   ];
 
   List<Widget> generateImageTiles() {
