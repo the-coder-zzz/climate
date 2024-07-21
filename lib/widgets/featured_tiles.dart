@@ -16,9 +16,10 @@ class FeaturedTiles extends StatelessWidget {
     required void Function(String feature) onFeatureSelected,
   }) : super(key: key);
 
-  final Size screenSize;
-  final String selectedFeature;
+  final Size screenSize; // Screen size for responsiveness
+  final String selectedFeature; // The feature selected to display
 
+  // Assets for each feature category
   final Map<String, List<String>> featureAssets = {
     'Renewable Energy': ['images/windmill.png', 'images/solar_panel.png'],
     'Sustainable Practices': [
@@ -32,6 +33,7 @@ class FeaturedTiles extends StatelessWidget {
     'Reforestation': ['images/reforestation.png', 'images/afforestation.png'],
   };
 
+  // Titles for each feature category
   final Map<String, List<String>> featureTitles = {
     'Renewable Energy': ['Wind Energy', 'Solar Power'],
     'Sustainable Practices': ['Green Building', 'Biodegradable Packaging'],
@@ -41,6 +43,7 @@ class FeaturedTiles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Get the assets and titles for the selected feature
     final assets =
         featureAssets[selectedFeature] ?? ['assets/images/default.jpg'];
     final titles = featureTitles[selectedFeature] ?? ['Default Title'];
@@ -55,6 +58,7 @@ class FeaturedTiles extends StatelessWidget {
                   SizedBox(
                     width: screenSize.width / 15,
                   ),
+                  // Generate tiles for mobile view
                   ...Iterable<int>.generate(assets.length)
                       .map((int pageIndex) => Row(
                             children: [
@@ -63,6 +67,7 @@ class FeaturedTiles extends StatelessWidget {
                                 children: [
                                   GestureDetector(
                                     onTap: () {
+                                      // Navigate to the detail page based on the title
                                       Widget detailPage;
                                       if (titles[pageIndex] == 'Wind Energy') {
                                         detailPage = WindEnergyDetailPage();
@@ -95,6 +100,7 @@ class FeaturedTiles extends StatelessWidget {
                                             Placeholder(); // Default placeholder
                                       }
 
+                                      // Navigate to the selected detail page
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
@@ -146,11 +152,13 @@ class FeaturedTiles extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // Generate tiles for desktop view
                 ...Iterable<int>.generate(assets.length).map(
                   (int pageIndex) => Column(
                     children: [
                       GestureDetector(
                         onTap: () {
+                          // Navigate to the detail page based on the title
                           Widget detailPage;
                           if (titles[pageIndex] == 'Wind Energy') {
                             detailPage = WindEnergyDetailPage();
@@ -173,6 +181,7 @@ class FeaturedTiles extends StatelessWidget {
                             detailPage = Placeholder(); // Default placeholder
                           }
 
+                          // Navigate to the selected detail page
                           Navigator.push(
                             context,
                             MaterialPageRoute(

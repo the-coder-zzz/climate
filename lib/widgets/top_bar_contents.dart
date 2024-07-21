@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class TopBarContents extends StatefulWidget {
+  // Callbacks for button presses
   final VoidCallback onHomePressed;
   final VoidCallback onFeaturedPressed;
   final VoidCallback onKnowledgePressed;
   final VoidCallback onContactPressed;
 
+  // Constructor to initialize the callbacks
   TopBarContents({
     required this.onHomePressed,
     required this.onFeaturedPressed,
@@ -18,6 +20,7 @@ class TopBarContents extends StatefulWidget {
 }
 
 class _TopBarContentsState extends State<TopBarContents> {
+  // List to keep track of hover states for each menu item
   final List _isHovering = [false, false, false, false];
 
   @override
@@ -33,6 +36,7 @@ class _TopBarContentsState extends State<TopBarContents> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // Title of the website
               Text(
                 'Climate Solutionize',
                 style: TextStyle(
@@ -48,6 +52,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                   children: [
                     SizedBox(width: screenSize.width / 7),
                     SizedBox(width: screenSize.width / 60),
+                    // Build menu items with respective callbacks
                     _buildMenuItem(0, 'Home', widget.onHomePressed),
                     SizedBox(width: screenSize.width / 20),
                     _buildMenuItem(1, 'Featured', widget.onFeaturedPressed),
@@ -65,6 +70,7 @@ class _TopBarContentsState extends State<TopBarContents> {
     );
   }
 
+  // Method to build a menu item with hover effect and callback
   Widget _buildMenuItem(int index, String title, VoidCallback onPressed) {
     return InkWell(
       onHover: (value) {
@@ -76,6 +82,7 @@ class _TopBarContentsState extends State<TopBarContents> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          // Menu item text
           Text(
             title,
             style: TextStyle(
@@ -85,6 +92,7 @@ class _TopBarContentsState extends State<TopBarContents> {
             ),
           ),
           SizedBox(height: 5),
+          // Underline indicator for hover effect
           Visibility(
             maintainAnimation: true,
             maintainState: true,

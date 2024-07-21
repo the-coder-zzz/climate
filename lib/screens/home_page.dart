@@ -14,19 +14,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // ScrollController to manage scrolling in the SingleChildScrollView
   final ScrollController _scrollController = ScrollController();
+
+  // Initially selected feature for the FloatingQuickAccessBar
   String _selectedFeature = 'Renewable Energy';
 
-  // Keys for scrollable widgets
+  // Global keys for different sections of the page for scroll navigation
   final GlobalKey _homeSectionKey = GlobalKey();
   final GlobalKey _featuredSectionKey = GlobalKey();
   final GlobalKey _knowledgeSectionKey = GlobalKey();
   final GlobalKey _contactSectionKey = GlobalKey();
 
+  // Listener for scroll events to trigger UI updates
   _scrollListener() {
     setState(() {});
   }
 
+  // Scroll to a section using its GlobalKey
   void _scrollToSection(GlobalKey key) {
     final RenderObject? renderObject = key.currentContext?.findRenderObject();
     if (renderObject is RenderBox) {
@@ -39,6 +44,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  // Update the selected feature for the FloatingQuickAccessBar
   void _onFeatureSelected(String feature) {
     setState(() {
       _selectedFeature = feature;

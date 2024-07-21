@@ -14,9 +14,9 @@ class _BiodegradablePackagingDetailPageState
   int _current = 0;
 
   final List<String> images = [
+    'images/sustainable_biodegradable_packaging3.jpg',
     'images/sustainable_biodegradable_packaging1.jpg',
     'images/sustainable_biodegradable_packaging2.jpg',
-    'images/sustainable_biodegradable_packaging3.jpg',
   ];
 
   List<Widget> generateImageTiles() {

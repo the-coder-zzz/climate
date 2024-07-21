@@ -41,5 +41,6 @@ flutter:
 
   assets:
     - assets/images/backgroundvid.mp4
+    - assets/images/background2.jpg
 
   

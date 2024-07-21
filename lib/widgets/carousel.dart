@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:climate/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 
 class MainCarousel extends StatefulWidget {
@@ -9,15 +8,17 @@ class MainCarousel extends StatefulWidget {
 }
 
 class _MainCarouselState extends State<MainCarousel> {
-  final String imagePath = 'assets/images/';
+  final String imagePath = 'assets/images/'; // Path to the images directory
+  final CarouselController _controller =
+      CarouselController(); // Controller for the carousel
 
-  final CarouselController _controller = CarouselController();
-
+  // Lists to manage hover and selection states
   List _isHovering = [false, false, false, false, false, false, false];
   List _isSelected = [true, false, false, false, false, false, false];
 
-  int _current = 0;
+  int _current = 0; // Current index of the carousel
 
+  // List of image file paths
   final List<String> images = [
     'images/solar_panel2.png',
     'images/ocean_cleanup.jpg',
@@ -27,6 +28,7 @@ class _MainCarouselState extends State<MainCarousel> {
     'images/green_building.png',
   ];
 
+  // List of place names corresponding to the images
   final List<String> places = [
     'SOLAR PANELS',
     'OCEAN CLEANUP',
@@ -36,6 +38,7 @@ class _MainCarouselState extends State<MainCarousel> {
     'GREEN BUILDING',
   ];
 
+  // Generate a list of image tiles to be displayed in the carousel
   List<Widget> generateImageTiles(screenSize) {
     return images
         .map(
@@ -52,11 +55,12 @@ class _MainCarouselState extends State<MainCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-    var imageSliders = generateImageTiles(screenSize);
+    var screenSize = MediaQuery.of(context).size; // Get the screen size
+    var imageSliders = generateImageTiles(screenSize); // Generate image tiles
 
     return Stack(
       children: [
+        // Carousel Slider
         CarouselSlider(
           items: imageSliders,
           options: CarouselOptions(
@@ -71,16 +75,13 @@ class _MainCarouselState extends State<MainCarousel> {
                 setState(() {
                   _current = index;
                   for (int i = 0; i < imageSliders.length; i++) {
-                    if (i == index) {
-                      _isSelected[i] = true;
-                    } else {
-                      _isSelected[i] = false;
-                    }
+                    _isSelected[i] = (i == index);
                   }
                 });
               }),
           carouselController: _controller,
         ),
+        // Display the place name at the center of the carousel
         AspectRatio(
           aspectRatio: 18 / 8,
           child: Center(
@@ -95,6 +96,7 @@ class _MainCarouselState extends State<MainCarousel> {
             ),
           ),
         ),
+        // Display navigation indicators for larger screens
         screenSize.width < 800
             ? Container()
             : AspectRatio(
@@ -118,6 +120,7 @@ class _MainCarouselState extends State<MainCarousel> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
+                              // Generate navigation buttons for each place
                               for (int i = 0; i < places.length; i++)
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
@@ -127,9 +130,7 @@ class _MainCarouselState extends State<MainCarousel> {
                                       hoverColor: Colors.transparent,
                                       onHover: (value) {
                                         setState(() {
-                                          value
-                                              ? _isHovering[i] = true
-                                              : _isHovering[i] = false;
+                                          _isHovering[i] = value;
                                         });
                                       },
                                       onTap: () {
@@ -149,6 +150,7 @@ class _MainCarouselState extends State<MainCarousel> {
                                         ),
                                       ),
                                     ),
+                                    // Display selection indicator
                                     Visibility(
                                       maintainSize: true,
                                       maintainAnimation: true,
@@ -168,7 +170,7 @@ class _MainCarouselState extends State<MainCarousel> {
                                           width: screenSize.width / 10,
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                             ],
