@@ -37,9 +37,6 @@ class BottomBar extends StatelessWidget {
                     // Contact information column
                     BottomBarColumn(
                       heading: 'CONTACT',
-                      s1: 'Contact Us',
-                      s2: 'About Us',
-                      s3: 'Careers',
                     ),
                   ],
                 ),
@@ -70,12 +67,7 @@ class BottomBar extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     // Contact information column
-                    BottomBarColumn(
-                      heading: 'CONTACT',
-                      s1: 'Contact Us',
-                      s2: 'About Us',
-                      s3: 'Careers',
-                    ),
+                    BottomBarColumn(heading: 'CONTACT'),
                     // Divider between contact and info text
                     Container(
                       color: Colors.white,
@@ -88,7 +80,8 @@ class BottomBar extends StatelessWidget {
                       children: [
                         InfoText(
                           type: 'Email',
-                          text: 'baldoza@gmail.com',
+                          text:
+                              'baldoza@gmail.com, delaluna@gmail.com, ilagan@gmail.com',
                         ),
                         SizedBox(height: 5),
                         InfoText(
